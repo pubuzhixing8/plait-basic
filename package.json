@@ -20,7 +20,16 @@
     "@angular/router": "~13.3.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "slate": "^0.73.1",
+    "immer": "^9.0.6",
+    "roughjs": "^4.5.2",
+    "points-on-curve": "^1.0.0",
+    "is-hotkey": "^0.2.0",
+    "@plait/core": "^0.0.4",
+    "@plait/richtext": "^0.0.4",
+    "@plait/mindmap": "^0.0.4",
+    "@plait/layouts": "^0.0.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.3.6",

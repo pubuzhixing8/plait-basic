@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'node_modules/@plait/richtext/styles/styles.scss';
+@import 'node_modules/@plait/mindmap/styles/styles.scss';
+@import 'node_modules/@plait/core/styles/styles.scss';
+
+.layout-toolbar {
+    bottom: 20px;
+    right: 30px;
+    width: 120px;
+    select {
+        width: 100%;
+    }
+}
+
+.board-basic-container {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+}
