@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { PlaitModule } from '@plait/core'
-import { MindmapModule } from '@plait/mindmap'
+import { MindModule } from '@plait/mind'
 import { RichtextModule } from '@plait/richtext'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +16,7 @@ import { BasicBoardComponent } from './board-basic/board-basic.component';
     BrowserModule,
     AppRoutingModule,
     RichtextModule,
-    MindmapModule,
+    MindModule,
     PlaitModule
   ],
   providers: [],

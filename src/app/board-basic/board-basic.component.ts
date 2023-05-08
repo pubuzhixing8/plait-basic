@@ -1,55 +1,23 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
-import { withMindmap } from '@plait/mindmap';
-import {
-  PlaitElement,
-  PlaitBoardChangeEvent,
-  Viewport,
-  PlaitBoard,
-  Transforms,
-} from '@plait/core';
-import { mockMindmapData } from '../mock/mindmap-data';
-
-const LOCAL_DATA_KEY = 'plait-board-change-data';
+import { Component } from '@angular/core';
+import { withMind } from '@plait/mind';
+import { PlaitElement, PlaitBoardChangeEvent, PlaitBoard } from '@plait/core';
 
 @Component({
   selector: 'board-basic',
   templateUrl: './board-basic.component.html',
+  host: {
+    class: 'board-basic-container',
+  },
 })
-export class BasicBoardComponent implements OnInit {
-  @HostBinding('class') class = 'board-basic-container';
+export class BasicBoardComponent {
+  plugins = [withMind];
 
-  plugins = [withMindmap];
-
-  value: PlaitElement[] = [mockMindmapData];
-
-  viewport!: Viewport;
+  value: PlaitElement[] = [];
 
   board!: PlaitBoard;
 
-  ngOnInit(): void {
-    const data = this.getLocalData() as PlaitBoardChangeEvent;
-    if (data) {
-      this.value = data.children;
-      this.viewport = data.viewport;
-    }
-  }
-
   change(event: PlaitBoardChangeEvent) {
-    this.setLocalData(JSON.stringify(event));
-  }
-
-  setLocalData(data: string) {
-    localStorage.setItem(`${LOCAL_DATA_KEY}`, data);
-  }
-
-  getLocalData() {
-    const data = localStorage.getItem(`${LOCAL_DATA_KEY}`);
-    return data ? JSON.parse(data) : null;
-  }
-
-  layoutChange(event: Event) {
-    const value = (event.target as HTMLSelectElement).value;
-    Transforms.setNode(this.board, { layout: value }, [0]);
+    // console.log(event.children);
   }
 
   plaitBoardInitialized(value: PlaitBoard) {
