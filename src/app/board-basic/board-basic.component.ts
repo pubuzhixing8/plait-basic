@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { withMind } from '@plait/mind';
-import { PlaitElement, PlaitBoardChangeEvent, PlaitBoard } from '@plait/core';
+import { PlaitElement, PlaitBoardChangeEvent, PlaitBoard, PlaitBoardComponent } from '@plait/core';
 
 @Component({
   selector: 'board-basic',
@@ -8,6 +8,8 @@ import { PlaitElement, PlaitBoardChangeEvent, PlaitBoard } from '@plait/core';
   host: {
     class: 'board-basic-container',
   },
+  standalone: true,
+  imports: [PlaitBoardComponent]
 })
 export class BasicBoardComponent {
   plugins = [withMind];
