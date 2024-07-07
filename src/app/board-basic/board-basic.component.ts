@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { withMind } from '@plait/mind';
-import { PlaitElement, PlaitBoardChangeEvent, PlaitBoard, PlaitBoardComponent } from '@plait/core';
+import { PlaitElement, PlaitBoard } from '@plait/core';
+import { OnChangeData, PlaitBoardComponent } from '@plait/angular-board';
 
 @Component({
   selector: 'board-basic',
@@ -18,7 +19,7 @@ export class BasicBoardComponent {
 
   board!: PlaitBoard;
 
-  change(event: PlaitBoardChangeEvent) {
+  change(event: OnChangeData) {
     // console.log(event.children);
   }
 
